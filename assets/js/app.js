@@ -72,10 +72,26 @@ function renderRecipes(data) {
     if (Array.isArray(data)) {
         data.forEach(recipe => {
             console.log('recipe:', recipe)
+                const steps = recipe.acf.fremgangsmade;
+                const stepsList = `<ol>${
+                Object.values(steps)
+                    .map(step => `<li>${step}</li>`)
+                    .join('')
+            }</ol>`;
+
+            const ingredients = recipe.acf.ingredienser;
+                const ingredientsList = `<ul>${
+                Object.values(ingredients)
+                    .map(ingredient => `<li>${ingredient}</li>`)
+                    .join('')
+            }</ul>`;
+
+
             resultEl.innerHTML += `
             <article>
-                <h2>${recipe.title.rendered}</h2>
-                ${recipe.content.rendered}
+            <img src="${recipe.acf.billede.url}" alt="">
+                <h2>${recipe.acf.titel}</h2>
+                ${stepsList}${ingredientsList}
             </article>
             `;
         })
