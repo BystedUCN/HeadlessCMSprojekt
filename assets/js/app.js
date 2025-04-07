@@ -3,6 +3,19 @@ const postsEndpoint = "wp-json/wp/v2/posts";
 const getRealImageUrls = "&acf_format=standard";
 const authEndpoint ="/wp-json/jwt-auth/v1/token"; //er kopieret fra JWT info på wordpress.
 
+// relevante id'er
+const glutenId = "5"
+const vegetarianId = "6"
+const ketoId = "7"
+
+const beginnerId = "11"
+const intId = "12"
+const expId = "13"
+
+const shortTimeId = "14"
+const medTimeId = "15"
+const longTimeId = "16"
+const longTimePlusId = "17"
 init()
 
 
@@ -72,25 +85,23 @@ function renderRecipes(data) {
     if (Array.isArray(data)) {
         data.forEach(recipe => {
             console.log('recipe:', recipe)
-                const steps = recipe.acf.fremgangsmade;
-                const stepsList = `<ol>${
+            const steps = recipe.acf.fremgangsmade;
+            const stepsList = `<ol>${
                 Object.values(steps)
+                    .filter(([key, step]) => key && key.trim() !== "" && step)
                     .map(step => `<li>${step}</li>`)
                     .join('')
             }</ol>`;
 
             const ingredients = recipe.acf.ingredienser;
-                const ingredientsList = `<ul>${
-                Object.values(ingredients)
-                    .map(ingredient => `<li>${ingredient}</li>`)
-                    .join('')
-            }</ul>`;
+            const ingredientsList = `<ul>${ Object.values(ingredients).filter(([key, ingredient]) => key && key.trim() !== "" && ingredient).map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>`;
 
 
             resultEl.innerHTML += `
             <article>
-            <img src="${recipe.acf.billede.url}" alt="">
+            <img src="${recipe.acf.billede.url}" alt="Et billede af en Gateau Marcel">
                 <h2>${recipe.acf.titel}</h2>
+                <span>Varighed: ${recipe.acf.varighed.name}</span>
                 ${stepsList}${ingredientsList}
             </article>
             `;
