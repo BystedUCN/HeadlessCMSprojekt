@@ -61,11 +61,11 @@ async function getToken(){
 }
 
 //henter vores domæne og posts med fetch api. await virker kun fordi vi har skrevet det er en async funktion.
-async function getPublicRecipes(){
-    const res = await fetch(domain + postsEndpoint); //dette er underforstået en GET request
-    const recipes = await res.json(); //recepies her gemmer vi data vi hentet.
-    return recipes;
-}
+// async function getPublicRecipes(){
+//     const res = await fetch(domain + postsEndpoint); //dette er underforstået en GET request
+//     const recipes = await res.json(); //recepies her gemmer vi data vi hentet.
+//     return recipes;
+// }
 
 //henter private posts, ekstra sikkerhed
 async function getPrivateRecipes(token){
@@ -101,7 +101,7 @@ function renderRecipes(data) {
             <article>
             <img src="${recipe.acf.billede.url}" alt="Et billede af en Gateau Marcel">
                 <h2>${recipe.acf.titel}</h2>
-                <span>Varighed: ${recipe.acf.varighed.name}</span>
+                <span>Varighed: ${recipe.acf.total_tid.name}</span>
                 ${stepsList}${ingredientsList}
             </article>
             `;
