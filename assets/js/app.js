@@ -18,6 +18,7 @@ const longTimeId = "16"
 const longTimePlusId = "17"
 init()
 
+let AllRecipes = [];
 
 //overorndet funktion. Starte alle vores applikationer op. 
 async function init(){
@@ -25,6 +26,7 @@ async function init(){
 
         const token = await getToken();
         const recepies = await getPrivateRecipes(token);
+        AllRecipes = recepies;
         renderRecipes(recepies); //vi sender recepires ned i funktionen renderRecipes, så den looper igennem og vi kalder funktionen her.
     } catch(err){
         console.log('err:', err);
@@ -82,6 +84,8 @@ async function getPrivateRecipes(token){
 //hvis det er sandt at det er et arry af opksrifter, looper den igennem det.
 
 function renderRecipes(data) {
+resultEl.innerHTML = ''; //sørger for at ved ny søgning slettes "indhold" i DOM
+
     if (Array.isArray(data)) {
         data.forEach(recipe => {
             console.log('recipe:', recipe)
@@ -117,4 +121,24 @@ function renderRecipes(data) {
 
 // DOM hooks
 const resultEl = document.querySelector(".result");
+
+//FILTER
+// Opsat eventlistener (submit) + prevent
+//først findes filterForm med Id og gemmer den i filterFormEl. addEventListener lytter efter at brugeren trykker på knappen ("submit form").
+//e.preventDefault søger for at siden ikke reloads ved submit.
+//dernæst hentes value/værdi fra option i select. vigtig at skrive de præcise values ellers virker det ikke. De skal I vores tilfælde passe samme med acf fra wordpress.
+const filterFormEl = document.querySelector("#filterForm") 
+filterFormEl.addEventListener("submit", e =>{
+    e.preventDefault();
+    const diffValue = filterFormEl.diffFilter.value;
+    const cusineValue = filterFormEl.cusineFilter.value;
+    const timeValue = filterFormEl.timeFilter.value;
+    
+//filter metoden bruges til at filtere igennem de forskellige værdier. hvis Alle er valgt, skal alle opskrifter vises. || betyder eller, hvis diffValue (altså værdien i vores option) er lig med den værdi der stemmer overens med en opskrift med i vores acf under sværhedsgrad har name = "samme værdi som valgt i option, f.eks Begynder"
+    const FilterRecepies = AllRecipes.filter(recipe => 
+        ((diffValue == "Alle" || diffValue === recipe.acf.svaerhedsgrad.name) && (cusineValue == "Alle" || cusineValue == recipe.acf.diaeter[0].name) && (timeValue == "Alle" || timeValue == recipe.acf.total_tid.name))
+    )
+    //kalder funktionen renderRecipes der står for at vises vores opskrifter i DOM og indsætter vores filterede opskrifter i, så de vises i DOM
+    renderRecipes(FilterRecepies);
+});
 
