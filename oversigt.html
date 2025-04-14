@@ -9,6 +9,39 @@
     <script src="./assets/js/oversigt.js" defer></script>
 </head>
 <body>
+    <main>
+        <form id="filterForm">
+            <label for="diffFilter">Sværhedsgrad:</label>
+            <select name="diffFilter" id="diffFilter">
+                <option value="Alle">Alle</option>
+                <option value="Begynder">Begynder</option>
+                <option value="Øvede">Øvede</option>
+                <option value="Expert">Expert</option>
+            </select>
+            <label for="cusineFilter">Kostpræferencer:</label>
+            <select name="cusineFilter" id="cusineFilter">
+                <option value="Alle">Alle</option>
+                <option value="Fjerkræ">Fjerkræ</option>
+                <option value="Fisk/skaldyr">Fisk/skaldyr</option>
+                <option value="Oksekød">Oksekød</option>
+                <option value="Svinekød">Svinekød</option>
+                <option value="Vegetarisk">Vegetarisk</option>
+        
+            </select>
+            <!--obs der er flere filter-->
+            <label for="timeFilter">Tid:</label>
+            <select name="timeFilter" id="timeFilter">
+                <option value="Alle">Alle</option>
+                <option value="15-30 min">15-30 min</option>
+                <option value="31 min -1 time">31 min-1 time</option>
+                <option value="1-2 timer">1-2 timer</option>
+                <option value="2 timer +">2 timer+</option>
+            </select>
+        
+            <button type="submit">Filtrér</button>
+        </form>
+        <div class="result"></div>
+    </main>
     
 </body>
 </html>

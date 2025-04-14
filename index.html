@@ -9,7 +9,97 @@
     <script src="./assets/js/forside.js" defer></script>
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="dropdownmenu">
+                <div class="dropdownItem">
+                    <a href="#">Hverdagsmad</a>
+                    <div class="dropdown">
+                        <a href="#">Aftensmad</a>
+                        <a href="#">Frokost</a>
+                        <a href="#">Morgemad</a>
+                        <a href="#">Snacks</a>
+                    </div>
+                    </div>
+                    <div class="dropdownItem">
+                        <a href="#">Weekendmad</a>
+                        <div class="dropdown">
+                            <a href="#">Aftensmad</a>
+                            <a href="#">Frokost</a>
+                            <a href="#">Morgemad</a>
+                            <a href="#">Snacks</a>
+                        </div>
+                    </div>
+                    <div class="dropdownItem">
+                        <a href="#">Gæstemad</a>
+                        <div class="dropdown">
+                            <a href="#">Forret</a>
+                            <a href="#">Hovedret</a>
+                            <a href="#">Dessert</a>
+                        </div>
+                    </div>
+                        <div class="dropdownItem">
+                            <a href="#">Bagning og Sødt</a>
+                            <div class="dropdown">
+                                <a href="#">Brød</a>
+                                <a href="#">Kager</a>
+                                <a href="#">Kiks</a>
+                                <a href="#">Småkager</a>
+                                <a href="#">Boller</a>
+                                <a href="#">Dessert</a>
+                            </div>
+                        </div>
+        </nav>
+        <!--Søge felt, ved ikke hvordan man lige laver det?-->
+        <form action="">
+            <input type="text">
+        </form>
+        <button>Log in</button>
+    </header>
     <main>
+        <article class="">
+            <img src="" alt="">
+            <h2>Familie favoritter</h2>
+            <p> <strong>Vores bud på gode familie favoritter</strong><br>
+            En samling af hjertevarme opskrifter, som hele familien vil elske. Her finder du nemme, velsmagende retter til både
+            hverdag og weekend - fra klassiske livretter til nye favoritter, der bringer familien sammen omkring middagsbordet.
+            Madlavning gjort enkelt, hyggeligt og fuld af smag.</p>
+            <button>Familie favoritter</button>
+        </article>
+        <article class="">
+            <img src="" alt="">
+            <h2>Sæsonens retter</h2>
+            <p> <strong>Vores bud på sæsonens retter</strong><br>
+            En frisk og farverig samling af forårsopskrifter med fokus på sæsonens bedste råvarer. Her finder du retter med sprøde
+            asparges, spæde ærter, nye kartofler, rabarber og friske krydderurter som purløg og dild. Let, grøn og smagfuld mad, der
+            fejrer forårets komme og lyset i køkkenet.</p>
+            <button>Sæsonens retter</button>
+        </article>
+        <div>
+            <h3>Hurtig aftensmad?</h3>
+            <p>Opskrifter på max 30 min</p>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div>
+            <h3>Skal du have gæster?</h3>
+            <p>Opskrifter til gæster</p>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div>
+            <h3>Opskrifter til weekenden</h3>
+            <p>Opskrifter når du har god tid</p>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+
         <!-- <div class="filterCont">
             <form>
              <div class="timeFilter">
@@ -59,38 +149,17 @@
             </form>
             <button>Filtrér</button>
         </div> -->
-            <form id="filterForm">
-                <label for="diffFilter">Sværhedsgrad:</label>
-                <select name="diffFilter" id="diffFilter">
-                    <option value="Alle">Alle</option>
-                    <option value="Begynder">Begynder</option>
-                    <option value="Øvede">Øvede</option>
-                    <option value="Expert">Expert</option>
-                </select>
-                <label for="cusineFilter">Kostpræferencer:</label>
-                <select name="cusineFilter" id="cusineFilter">
-                    <option value="Alle">Alle</option>
-                    <option value="Fjerkræ">Fjerkræ</option>
-                    <option value="Fisk/skaldyr">Fisk/skaldyr</option>
-                    <option value="Oksekød">Oksekød</option>
-                    <option value="Svinekød">Svinekød</option>
-                    <option value="Vegetarisk">Vegetarisk</option>
-            
-                </select>
-                <!--obs der er flere filter-->
-                <label for="timeFilter">Tid:</label>
-                <select name="timeFilter" id="timeFilter">
-                    <option value="Alle">Alle</option>
-                    <option value="15-30 min">15-30 min</option>
-                    <option value="31 min -1 time">31 min-1 time</option>
-                    <option value="1-2 timer">1-2 timer</option>
-                    <option value="2 timer +">2 timer+</option>
-                </select>
-            
-                <button type="submit">Filtrér</button>
-            </form>
-        <div class="result"></div>
+        
+        <!-- <div class="result"></div> -->
         
     </main>
+    <footer>
+        <p>
+            <strong>Kontakt os:</strong><br>
+            CVR: <br>
+            Mail: <br>
+            Telefon: <br>
+        </p>
+    </footer>
 </body>
 </html>
