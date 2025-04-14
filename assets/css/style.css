@@ -1,7 +1,121 @@
 * {
     box-sizing: border-box;
+    /* background-color: var(--baggrundsfarve); */
 }
 
 body{
     margin: 0;
+}
+/*Typografi*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+/*Farver*/
+:root{
+    --baggrundsfarve:#FFFFFF;
+    --opskriftOverskrift: #FF6B6B;
+    --CTAOpskrift: #819988;
+    --NavbarFarve: #FFF8F0;
+    --tekst:#33322E;
+    --pCTA:#4D90FE;
+    --Overskrift: #59352F;
+    --footer: #023B20;
+    --baggrundArtikel: #FAEEDB;
+}
+
+/*Generel styling*/
+h1, h2, h3{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--Overskrift)
+}
+h1{
+    padding-left: 13rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+p{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--tekst);
+}
+main{
+    background-color: var(--baggrundsfarve);
+}
+/*Styling af NAV*/
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--NavbarFarve);
+    padding: 1rem;
+}
+
+.dropdownmenu{
+    display: flex;
+}
+
+.dropdownItem a{
+    text-decoration: none;
+    color: var(--tekst);
+}
+
+/*Styling af knapper*/
+.buttonOpskriftssamling1{
+    background-color: var(--pCTA);
+    color: var(--NavbarFarve);
+    border-radius: 6px;
+    border: none;
+    padding: 0.2rem 0.5rem 0.2rem;
+}
+
+.buttonOpskriftssamling2{
+    background-color: var(--CTAOpskrift);
+    color: var(--NavbarFarve);
+    border-radius: 6px;
+    border: none;
+    padding: 0.2rem 0.5rem 0.2rem;
+}
+
+/*Styling af artikler/opskriftssamlinger på forsiden*/
+.opskriftssamling1{
+    background-color: var(--baggrundArtikel);
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.3fr 1fr 0.3fr;
+    width: 1100px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.opskriftssamling2{
+    background-color: var(--baggrundArtikel);
+    margin: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.opskriftssamling1 p{
+    grid-column: 2 / 3;
+    grid-row: 2 / 2;
+    margin-top: -1rem;
+    margin-right: 1rem; 
+}
+
+.opskriftssamling1 img{
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    width: 25rem;
+    padding-right: 0.5rem;
+}
+
+.buttonOpskriftssamling1{
+    grid-column: 2 / 3;
+    width: 150px;
+    margin-bottom: 1rem;
+}
+
+.opskriftssamling1 p{
 }
