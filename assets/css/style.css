@@ -45,7 +45,16 @@ p, a{
 main{
     background-color: var(--baggrundsfarve);
 }
-
+/*Header*/
+/*hvis Madløsning skal står et sted i NAV! det ødelagde lige hele layout*/
+/* .logo{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--Overskrift);
+    font-size: 2rem;
+        
+} */
 /*Styling af NAV*/
 header{
     display: flex;
@@ -233,6 +242,31 @@ header{
 }
 
 /*styling af img slider*/
+
+/*Styling af forside slut*/
+/**/
+
+
+/*Styling af siden opskrift*/
+
+.opskriftLayout{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.overskriftOpskrift{
+    color: var(--opskriftOverskrift);
+}
+.ingrediensListe{
+    background-color: var(--CTAOpskrift);
+
+}
+.ingrediensListe ul{
+    list-style-type: none;
+    background-color: var(--baggrundsfarve);
+    margin: 1rem;
+    padding-left: 0.5rem;
+}
 
 /*Styling af footer*/
 footer{
