@@ -79,9 +79,9 @@ header{
     /*har givet den en bredde, men ved ikke om det er den bedste løsning*/
     width: 150px;
     border-bottom : solid var(--Overskrift);
-    border-left: /*dropdown menu*/
-.dropdownmenu{
-    display: flex;
+    /*Ser dumt ud når der kommer border på siderne... måske skal der slet ikke være nogen*/
+    /* border-left: solid var(--Overskrift);
+    border-right: solid var(--Overskrift); */
 }
 
 .dropdownIndhold a{
@@ -102,7 +102,7 @@ header{
     z-index: 20;
     background-color: var(--NavbarFarve);
     padding: 0.5rem;
-    min-width: 100%;
+    
 }
 /*når man hover over vores div med class dropdown, vises indholdet af links.*/
 .dropdown:hover .dropdownIndhold{
@@ -115,9 +115,13 @@ header{
 .dropbtn{
     border: none;
     background-color: var(--NavbarFarve);
-    width: 200px;
+    font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+
     }
-}
+
 /*når man hover over vores div med class dropdown, vises indholdet af links.*/
 .dropdown:hover .dropdownIndhold{
     display: block;
