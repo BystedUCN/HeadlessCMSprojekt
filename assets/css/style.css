@@ -53,15 +53,38 @@ header{
     background-color: var(--NavbarFarve);
     padding: 1rem;
 }
-
+/*dropdown menu*/
 .dropdownmenu{
     display: flex;
 }
 
-.dropdownItem a{
+.dropdownIndhold a{
     text-decoration: none;
     color: var(--tekst);
+    /*display block gør så indholdet/a står under hinanden*/
+    display: block;
 }
+.dropdown{
+    display: inline-block;
+    gap: 1rem;
+}
+/*indholdet (vores links) er pr default skjulte*/
+.dropdownIndhold{
+    display: none;
+    /*positon absolute gør så indholdet/a bliver samme sted " det fylder ovenpå layoutet istedet for at flytte hele Nav bar*/
+    position: absolute;
+    z-index: 20;
+    background-color: var(--NavbarFarve);
+    border: solid;
+}
+/*når man hover over vores div med class dropdown, vises indholdet af links.*/
+.dropdown:hover .dropdownIndhold{
+    display: block;
+}
+.dropbtn{
+    border: none;
+    background-color: var(--NavbarFarve);
+    }
 
 /*Styling af knapper*/
 .buttonOpskriftssamling1{
