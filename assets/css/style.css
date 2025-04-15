@@ -66,7 +66,7 @@ header{
 }
 .dropdown{
     display: inline-block;
-    gap: 1rem;
+    
 }
 /*indholdet (vores links) er pr default skjulte*/
 .dropdownIndhold{
@@ -75,15 +75,61 @@ header{
     position: absolute;
     z-index: 20;
     background-color: var(--NavbarFarve);
-    border: solid;
+    padding: 0.5rem;
+    /*har givet den en bredde, men ved ikke om det er den bedste løsning*/
+    width: 150px;
+    border-bottom : solid var(--Overskrift);
+    border-left: /*dropdown menu*/
+.dropdownmenu{
+    display: flex;
+}
+
+.dropdownIndhold a{
+    text-decoration: none;
+    color: var(--tekst);
+    /*display block gør så indholdet/a står under hinanden*/
+    display: block;
+}
+.dropdown{
+    display: inline-block;
+    width: 200px;
+}
+/*indholdet (vores links) er pr default skjulte*/
+.dropdownIndhold{
+    display: none;
+    /*positon absolute gør så indholdet/a bliver samme sted " det fylder ovenpå layoutet istedet for at flytte hele Nav bar*/
+    position: absolute;
+    z-index: 20;
+    background-color: var(--NavbarFarve);
+    padding: 0.5rem;
+    min-width: 100%;
 }
 /*når man hover over vores div med class dropdown, vises indholdet af links.*/
 .dropdown:hover .dropdownIndhold{
     display: block;
 }
+/*functionel animation pil ikon skifter ved hover over dropdown menu*/
+.dropdown:hover i {
+    transform: rotate(270deg);
+}
 .dropbtn{
     border: none;
     background-color: var(--NavbarFarve);
+    width: 200px;
+    }
+}
+/*når man hover over vores div med class dropdown, vises indholdet af links.*/
+.dropdown:hover .dropdownIndhold{
+    display: block;
+}
+/*functionel animation pil ikon skifter ved hover over dropdown menu*/
+.dropdown:hover i {
+    transform: rotate(270deg);
+}
+.dropbtn{
+    border: none;
+    background-color: var(--NavbarFarve);
+   
     }
 
 /*Styling af knapper*/
