@@ -7,8 +7,57 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/oversigt.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="dropdownmenu">
+                <div class="dropdown">
+                    <button class="dropbtn">Hverdagsmad<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Aftensmad</a>
+                        <a href="#">Frokost</a>
+                        <a href="#">Morgemad</a>
+                        <a href="#">Snacks</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Weekendmad<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Aftensmad</a>
+                        <a href="#">Frokost</a>
+                        <a href="#">Morgemad</a>
+                        <a href="#">Snacks</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Gæstemad <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="#">Forret</a>
+                        <a href="#">Hovedret</a>
+                        <a href="#">Dessert</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Bagning og Sødt <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="#">Brød</a>
+                        <a href="#">Kager</a>
+                        <a href="#">Kiks</a>
+                        <a href="#">Småkager</a>
+                        <a href="#">Boller</a>
+                        <a href="#">Dessert</a>
+                    </div>
+                </div>
+        </nav>
+        <!--Søge felt, ved ikke hvordan man lige laver det?-->
+        <form action="">
+            <label for="">SØG</label>
+            <input type="text">
+        </form>
+        <button class="loginBtn">Log in <i class="fa-solid fa-user"></i></button>
+    </header>
     <main>
         <form id="filterForm">
             <label for="diffFilter">Sværhedsgrad:</label>
@@ -16,13 +65,13 @@
                 <option value="Alle">Alle</option>
                 <option value="Begynder">Begynder</option>
                 <option value="Øvede">Øvede</option>
-                <option value="Expert">Expert</option>
+                <option value="Ekspert">Ekspert</option>
             </select>
             <label for="cusineFilter">Kostpræferencer:</label>
             <select name="cusineFilter" id="cusineFilter">
                 <option value="Alle">Alle</option>
                 <option value="Fjerkræ">Fjerkræ</option>
-                <option value="Fisk/skaldyr">Fisk/skaldyr</option>
+                <option value="Fisk/Skaldyr">Fisk/skaldyr</option>
                 <option value="Oksekød">Oksekød</option>
                 <option value="Svinekød">Svinekød</option>
                 <option value="Vegetarisk">Vegetarisk</option>
@@ -38,10 +87,66 @@
                 <option value="2 timer +">2 timer+</option>
             </select>
         
-            <button type="submit">Filtrér</button>
+            <button class="filterbtn" type="submit">SØG</button>
         </form>
-        <div class="result"></div>
-    </main>
-    
+        <h1>Titel på f.eks Aftensmad</h1>
+        <section class="cardsSektion">
+            <div class="cards">
+                <img src="./assets/img/creamy-asparagus-soup.webp" alt="">
+                <i class="fa-regular fa-bookmark"></i>
+                <h2>Opskrift titel</h2>
+
+                <p>Total tid</p>
+                <i class="fa-regular fa-clock"></i>
+
+
+            </div>
+            <div class="cards">
+                <img src="./assets/img/creamy-asparagus-soup.webp" alt="">
+                <i class="fa-regular fa-bookmark"></i>
+            
+                <p>Total tid: 2 timer+</p>
+                <i class="fa-regular fa-clock"></i>
+            
+                <h2>Opskrift titel</h2>
+            
+            </div>
+            <div class="cards">
+                <img src="./assets/img/creamy-asparagus-soup.webp" alt="">
+                <i class="fa-regular fa-bookmark"></i>
+            
+                <p>Total tid</p>
+                <i class="fa-regular fa-clock"></i>
+            
+                <h2>Opskrift titel</h2>
+            
+            </div>
+            <div class="cards">
+                <img src="./assets/img/creamy-asparagus-soup.webp" alt="">
+                <i class="fa-regular fa-bookmark"></i>
+            
+                <p>Total tid</p>
+                <i class="fa-regular fa-clock"></i>
+            
+                <h2>Opskrift titel</h2>
+            
+            </div>
+            <div class="cards">
+                <img src="./assets/img/creamy-asparagus-soup.webp" alt="">
+                <i class="fa-regular fa-bookmark"></i>
+            
+                <p>Total tid</p>
+                <i class="fa-regular fa-clock"></i>
+            
+                <h2>Opskrift titel</h2>
+            
+            </div>
+         
+                    </section>
+
+                    
+                    <div class="result"></div>
+                </main>
+                
 </body>
 </html>

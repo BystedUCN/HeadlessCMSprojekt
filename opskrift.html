@@ -7,8 +7,128 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/opskrift.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <div class="dropdownmenu">
+                <div class="dropdown">
+                    <button class="dropbtn">Hverdagsmad<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Aftensmad</a>
+                        <a href="#">Frokost</a>
+                        <a href="#">Morgemad</a>
+                        <a href="#">Snacks</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Weekendmad<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Aftensmad</a>
+                        <a href="#">Frokost</a>
+                        <a href="#">Morgemad</a>
+                        <a href="#">Snacks</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Gæstemad <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="#">Forret</a>
+                        <a href="#">Hovedret</a>
+                        <a href="#">Dessert</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Bagning og Sødt <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="#">Brød</a>
+                        <a href="#">Kager</a>
+                        <a href="#">Kiks</a>
+                        <a href="#">Småkager</a>
+                        <a href="#">Boller</a>
+                        <a href="#">Dessert</a>
+                    </div>
+                </div>
+        </nav>
+        <!--Søge felt, ved ikke hvordan man lige laver det?-->
+        <form action="">
+            <label for="">SØG</label>
+            <input type="text">
+        </form>
+        <button class="loginBtn">Log in <i class="fa-solid fa-user"></i></button>
+    </header>
+    <main>
+        <article class="opskriftLayout">
+            <div class="introTilOpskrift">
+                <h1 class="overskriftOpskrift">Overskrift på opskriften</h1>
+                <p>den korte beskrivelse
+                    <!--acf.opskriftssamling[0].description-->
+                </p>
+                <p class="Small">Total tid: 4 timer</p>
+                <p class="">Arbejdstid: 2 timer</p>
+                <p class="">Portioner: 4 portioner</p>
+
+                <span class="material-symbols-outlined">
+                    bookmark_add
+                </span>
+                <span class="material-symbols-outlined">
+                    send
+                </span>
+                <span class="material-symbols-outlined">
+                    print
+                </span>
+            </div>
+            <img class="billedeOpskrift" src="./assets/img/creamy-asparagus-soup.webp" alt="">
+
+            <!--ikoner her? er det fra google?-->
+            <div class="ingrediensListe">
+                <h2>Ingredienser:</h2>
+                <ul class="ingredienser">
+                    <li><input type="checkbox"> Tomater</li>
+                    <li><input type="checkbox"> Løg</li>
+                    <li><input type="checkbox"> Hvidløg</li>
+                    <li><input type="checkbox"> Oregano</li>
+                </ul>
+            </div>
+            <div class="Fremgangsmåde"><h2>Fremgangsmåde:</h2>
+                <h3>Tips til retten:</h3>
+                <p>Her står alle tips til opskriften!</p>
+            </div>
+        </article>
+        <article class="opskriftssamling1">
+            <img src="./assets/img/FamilieLaverMad.jpg" alt="">
+            <h2>Familie favoritter</h2>
+            <p> <strong>Vores bud på gode familie favoritter</strong><br>
+                En samling af hjertevarme opskrifter, som hele familien vil elske. Her finder du nemme, velsmagende retter til
+                både
+                hverdag og weekend - fra klassiske livretter til nye favoritter, der bringer familien sammen omkring
+                middagsbordet.
+                Madlavning gjort enkelt, hyggeligt og fuld af smag.</p>
+            <button class="buttonOpskriftssamling1">Familie favoritter</button>
+        </article>
+        <article class="opskriftssamling2">
+            <img src="./assets/img/seasonPaaske.jpg" alt="">
+            <h2>Sæsonens retter</h2>
+            <p> <strong>Vores bud på sæsonens retter</strong><br>
+                En frisk og farverig samling af forårsopskrifter med fokus på sæsonens bedste råvarer. Her finder du retter med
+                sprøde
+                asparges, spæde ærter, nye kartofler, rabarber og friske krydderurter som purløg og dild. Let, grøn og smagfuld
+                mad, der
+                fejrer forårets komme og lyset i køkkenet.</p>
+            <a href="./samling.html" class="buttonOpskriftssamling2">Sæsonens retter</a>
+            <!-- 
+                    <button class="buttonOpskriftssamling2">Sæsonens retter</button> -->
+        </article>
+    </main>
+    <footer>
+        <p>
+            <strong>Kontakt os:</strong><br>
+            CVR: <br>
+            Mail: <br>
+            Telefon: <br>
+        </p>
+    </footer>
 </body>
 </html>

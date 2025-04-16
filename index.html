@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Madløsningen</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/forside.js" defer></script>
@@ -13,69 +13,73 @@
     <header>
         <nav>
             <div class="dropdownmenu">
-                <div class="dropdownItem">
-                    <a href="#">Hverdagsmad</a>
-                    <div class="dropdown">
-                        <a href="#">Aftensmad</a>
-                        <a href="#">Frokost</a>
-                        <a href="#">Morgemad</a>
-                        <a href="#">Snacks</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Hverdagsmad<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Aftensmad</a>
+                        <a href="./oversigt.html">Frokost</a>
+                        <a href="./oversigt.html">Morgemad</a>
+                        <a href="./oversigt.html">Snacks</a>
                     </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Weekendmad<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Aftensmad</a>
+                        <a href="./oversigt.html">Frokost</a>
+                        <a href="./oversigt.html">Morgemad</a>
+                        <a href="./oversigt.html">Snacks</a>
                     </div>
-                    <div class="dropdownItem">
-                        <a href="#">Weekendmad</a>
-                        <div class="dropdown">
-                            <a href="#">Aftensmad</a>
-                            <a href="#">Frokost</a>
-                            <a href="#">Morgemad</a>
-                            <a href="#">Snacks</a>
-                        </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Gæstemad <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Forret</a>
+                        <a href="./oversigt.html">Hovedret</a>
+                        <a href="./oversigt.html">Dessert</a>
                     </div>
-                    <div class="dropdownItem">
-                        <a href="#">Gæstemad</a>
-                        <div class="dropdown">
-                            <a href="#">Forret</a>
-                            <a href="#">Hovedret</a>
-                            <a href="#">Dessert</a>
-                        </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Bagning og Sødt <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdownIndhold">
+                        <a href="./oversigt.html">Brød</a>
+                        <a href="./oversigt.html">Kager</a>
+                        <a href="./oversigt.html">Kiks</a>
+                        <a href="./oversigt.html">Småkager</a>
+                        <a href="./oversigt.html">Boller</a>
+                        <a href="./oversigt.html">Dessert</a>
                     </div>
-                        <div class="dropdownItem">
-                            <a href="#">Bagning og Sødt</a>
-                            <div class="dropdown">
-                                <a href="#">Brød</a>
-                                <a href="#">Kager</a>
-                                <a href="#">Kiks</a>
-                                <a href="#">Småkager</a>
-                                <a href="#">Boller</a>
-                                <a href="#">Dessert</a>
-                            </div>
-                        </div>
+                </div>
         </nav>
         <!--Søge felt, ved ikke hvordan man lige laver det?-->
         <form action="">
+            <label for="">SØG</label>
             <input type="text">
         </form>
-        <button>Log in <i class="fa-solid fa-user"></i></button>
+        <button class="loginBtn">Log in <i class="fa-solid fa-user"></i></button>
     </header>
     <main>
         <h1>Madløsningen</h1>
         <article class="opskriftssamling1">
-            <img src="./assets/img/pizza.jpg" alt="">
+            <img src="./assets/img/FamilieLaverMad.jpg" alt="">
             <h2>Familie favoritter</h2>
             <p> <strong>Vores bud på gode familie favoritter</strong><br>
             En samling af hjertevarme opskrifter, som hele familien vil elske. Her finder du nemme, velsmagende retter til både
             hverdag og weekend - fra klassiske livretter til nye favoritter, der bringer familien sammen omkring middagsbordet.
             Madlavning gjort enkelt, hyggeligt og fuld af smag.</p>
-            <button class="buttonOpskriftssamling1">Familie favoritter</button>
+            <a href="./samling.html" class="buttonOpskriftssamling1">Familie favoritter</a>
+            <!-- <button class="buttonOpskriftssamling1">Familie favoritter</button> -->
         </article>
         <article class="opskriftssamling2">
-            <img src="./assets/img/creamy-asparagus-soup.webp" alt="">
+            <img src="./assets/img/seasonPaaske.jpg" alt="">
             <h2>Sæsonens retter</h2>
             <p> <strong>Vores bud på sæsonens retter</strong><br>
             En frisk og farverig samling af forårsopskrifter med fokus på sæsonens bedste råvarer. Her finder du retter med sprøde
             asparges, spæde ærter, nye kartofler, rabarber og friske krydderurter som purløg og dild. Let, grøn og smagfuld mad, der
             fejrer forårets komme og lyset i køkkenet.</p>
-            <button class="buttonOpskriftssamling2">Sæsonens retter</button>
+            <a href="./samling.html" class="buttonOpskriftssamling2">Sæsonens retter</a>
+<!-- 
+            <button class="buttonOpskriftssamling2">Sæsonens retter</button> -->
         </article>
         <div>
             <h3>Hurtig aftensmad?</h3>

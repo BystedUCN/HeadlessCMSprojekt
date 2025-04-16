@@ -76,7 +76,7 @@ async function getPrivateRecipes(token){
             Authorization: "Bearer " + token
         }
     }
-    const res = await fetch(domain + postsEndpoint + "?status=private" + getRealImageUrls, options);
+    const res = await fetch(domain + postsEndpoint + "?status=private&per_page=100" + getRealImageUrls, options);
     console.log('res:', res)
     const recipes = await res.json(); //recepies her gemmer vi data vi hentet.
     return recipes;
