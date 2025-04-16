@@ -48,16 +48,11 @@ main{
     background-color: var(--baggrundsfarve);
 }
 
-/*Header*/
-/*hvis Madløsning skal står et sted i NAV! det ødelagde lige hele layout*/
-/* .logo{
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: var(--Overskrift);
-    font-size: 2rem;
-        
-} */
+#forside {
+    text-decoration: none;
+    margin-right: 100px;
+    /* padding: 1rem; */
+}
 
 /*Styling af NAV*/
 header{
@@ -67,12 +62,16 @@ header{
     padding: 1rem;
 }
 
+nav {
+    align-items: center;
+}
 /**/
 /*dropdown menu*/
 /**/
 
 .dropdownmenu{
     display: flex;
+    align-items: center;
 }
 
 .dropdownIndhold a{
@@ -83,7 +82,6 @@ header{
 }
 .dropdown{
     display: inline-block;
-    
 }
 
 /*indholdet (vores links) er pr default skjulte*/
@@ -93,7 +91,7 @@ header{
     position: absolute;
     z-index: 20;
     background-color: var(--NavbarFarve);
-    padding: 0.5rem;
+    
     /*har givet den en bredde, men ved ikke om det er den bedste løsning*/
     width: 150px;
     border-bottom : solid var(--Overskrift);
@@ -125,6 +123,14 @@ header{
     
 }
 
+.dropdownIndhold a {
+    padding: 0.5rem;
+}
+.dropdownIndhold a:hover {
+    background-color: var(--baggrundArtikel);
+    transform: scale(110%);
+}
+
 /*når man hover over vores div med class dropdown, vises indholdet af links.*/
 .dropdown:hover .dropdownIndhold{
     display: block;
@@ -141,6 +147,7 @@ header{
         font-weight: 400;
         font-style: normal;
         font-size: 1rem;
+        padding-block: 0px;
 
     }
 
@@ -160,6 +167,10 @@ header{
    
     }
 
+#search {
+    display: flex;
+    align-items: center;
+}
 /**/
 /*Styling af knapper*/
 /**/
