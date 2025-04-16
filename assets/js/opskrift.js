@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         return recipe;
     }
     function renderSingleRecipes(recipe) {
+            const steps = recipe[0].acf.fremgangsmade;
+    const ingredients = recipe[0].acf.ingredienser;
+ 
+    const stepsList = `<ol>${Object.values(steps).map(step => `<li>${step}</li>`).join('')}</ol>`;
+    const ingredientsList = `<ul  class="ingredienser">${Object.values(ingredients).map(ing => `<li><input type="checkbox">${ing}</li>`).join('')}</ul>`;
         opskriftAPI.innerHTML += `
         <article class="opskriftLayout">
         <div class="introTilOpskrift">
@@ -75,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         <p>den korte beskrivelse
         ${recipe[0].acf.kort_beskrivelse}
         </p>
-        <p class="Small">Total tid: 4 timer</p>
+        <p class="Small">Total tid: ${recipe[0].acf.total_tid.name}</p>
         <p class="">Arbejdstid: 2 timer</p>
         <p class="">Portioner: 4 portioner</p>
         
@@ -89,20 +94,17 @@ document.addEventListener("DOMContentLoaded", () =>{
         print
         </span>
         </div>
-        <img class="billedeOpskrift" src="./assets/img/creamy-asparagus-soup.webp" alt="">
+        <img class="billedeOpskrift" src="${recipe[0].acf.billede.url}" alt="">
         
-        <!--ikoner her? er det fra google?-->
         <div class="ingrediensListe">
         <h2>Ingredienser:</h2>
+        ${ingredientsList}
         <ul class="ingredienser">
-        <li><input type="checkbox"> Tomater</li>
-        <li><input type="checkbox"> Løg</li>
-        <li><input type="checkbox"> Hvidløg</li>
-        <li><input type="checkbox"> Oregano</li>
-        </ul>
+       
         </div>
         <div class="Fremgangsmåde">
         <h2>Fremgangsmåde:</h2>
+        ${stepsList}
         <h3>Tips til retten:</h3>
         <p>Her står alle tips til opskriften!</p>
         </div>
