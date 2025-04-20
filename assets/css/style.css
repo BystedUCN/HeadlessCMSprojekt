@@ -65,6 +65,7 @@ header{
     justify-content: space-between;
     background-color: var(--NavbarFarve);
     padding: 1rem;
+    border-bottom: solid var(--Overskrift);
 }
 
 /**/
@@ -293,7 +294,9 @@ header{
 }
 
 /*styling af img slider*/
-
+.billedISlider{
+    height: 250px;
+}
 /*Styling af forside slut*/
 /**/
 
@@ -303,7 +306,7 @@ header{
 
 .opskriftLayout{
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
 }
 
@@ -340,6 +343,7 @@ header{
 
 .opskriftLayout img{
     /* height: 30rem; */
+ /*billedet ødelægger layoutet... ved ikke hvordan jeg fixer dette!*/
     
 }
 
@@ -351,7 +355,7 @@ header{
 .iconerOpskrift{
     display: flex;
     gap: 1rem;
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
     justify-content: center;
     align-items: center;
 }

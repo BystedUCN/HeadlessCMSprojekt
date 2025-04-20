@@ -82,7 +82,9 @@ async function getPrivateRecipes(token){
     return recipes;
 }
 //hvis det er sandt at det er et arry af opksrifter, looper den igennem det.
-
+// DOM hooks
+const resultEl = document.querySelector(".result");
+if(resultEl)
 function renderRecipes(data) {
 resultEl.innerHTML = ''; //sørger for at ved ny søgning slettes "indhold" i DOM
 
@@ -119,8 +121,6 @@ resultEl.innerHTML = ''; //sørger for at ved ny søgning slettes "indhold" i DO
     }
 }
 
-// DOM hooks
-const resultEl = document.querySelector(".result");
 
 //FILTER
 // Opsat eventlistener (submit) + prevent
@@ -128,6 +128,7 @@ const resultEl = document.querySelector(".result");
 //e.preventDefault søger for at siden ikke reloads ved submit.
 //dernæst hentes value/værdi fra option i select. vigtig at skrive de præcise values ellers virker det ikke. De skal I vores tilfælde passe samme med acf fra wordpress.
 const filterFormEl = document.querySelector("#filterForm") 
+if(filterFormEl){
 filterFormEl.addEventListener("submit", e =>{
     e.preventDefault();
     const diffValue = filterFormEl.diffFilter.value;
@@ -141,4 +142,4 @@ filterFormEl.addEventListener("submit", e =>{
     //kalder funktionen renderRecipes der står for at vises vores opskrifter i DOM og indsætter vores filterede opskrifter i, så de vises i DOM
     renderRecipes(FilterRecepies);
 });
-
+}
