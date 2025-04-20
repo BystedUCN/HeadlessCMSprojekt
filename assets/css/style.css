@@ -303,7 +303,7 @@ header{
 
 .opskriftLayout{
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
     grid-template-rows: repeat(2, 1fr);
 }
 
@@ -339,7 +339,7 @@ header{
 }
 
 .opskriftLayout img{
-    height: 30rem;
+    /* height: 30rem; */
     
 }
 
@@ -348,6 +348,19 @@ header{
     margin-bottom: 1rem;
     margin-left: 1rem;
 }
+.iconerOpskrift{
+    display: flex;
+    gap: 1rem;
+    padding-left: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.introTilOpskrift h1, .pIntro{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 
 /*Styling af siden oversigt*/
 .cardsSektion{

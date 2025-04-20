@@ -77,22 +77,32 @@ document.addEventListener("DOMContentLoaded", () =>{
         <article class="opskriftLayout">
         <div class="introTilOpskrift">
         <h1 class="overskriftOpskrift">${recipe[0].acf.titel}</h1>
-        <p>den korte beskrivelse
+        <p class= "pIntro">den korte beskrivelse
         ${recipe[0].acf.kort_beskrivelse}
         </p>
-        <p class="Small">Total tid: ${recipe[0].acf.total_tid.name}</p>
-        <p class="">Arbejdstid: 2 timer</p>
-        <p class="">Portioner: 4 portioner</p>
-        
+        <p class= "pIntro">Total tid: ${recipe[0].acf.total_tid.name}</p>
+        <p class= "pIntro">Arbejdstid: 2 timer</p>
+        <p class= "pIntro">Portioner: 4 portioner</p>
+        <div class ="iconerOpskrift">
+        <div>
         <span class="material-symbols-outlined">
         bookmark_add
         </span>
+        <p>Gem</p>
+        </div>
+        <div>
         <span class="material-symbols-outlined">
         send
         </span>
+        <p>Del</p>
+        </div>
+        <div>
         <span class="material-symbols-outlined">
         print
         </span>
+        <p>Print</p>
+        </div>
+        </div>
         </div>
         <img class="billedeOpskrift" src="${recipe[0].acf.billede.url}" alt="">
         
