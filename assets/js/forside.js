@@ -21,8 +21,9 @@ function renderRecipesById(recipe) {
             console.log('recipe:', recipe)
             
             hurtigAftensMadSlider.innerHTML += `
-                
+                <a href="./opskrift.html?slug=${recipe.slug}">
                 <img class="billedISlider" src="${recipe.acf.billede.url}" alt="">
+                </a>
             `;
         })
     
