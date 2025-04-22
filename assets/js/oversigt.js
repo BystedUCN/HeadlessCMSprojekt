@@ -1,3 +1,4 @@
+//funktion der indsætter det hente data fra wordpress
 function renderRecipes(data) {
      cardsEl.innerHTML = ''; //sørger for at ved ny søgning slettes "indhold" i DOM
         data.forEach(recipe => {
@@ -25,5 +26,5 @@ function renderRecipes(data) {
    
 }
 
-// DOM hooks
+// DOM elementer
 const cardsEl = document.querySelector(".cardsSektion");

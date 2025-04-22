@@ -7,7 +7,7 @@ const authEndpoint ="/wp-json/jwt-auth/v1/token"; //er kopieret fra JWT info på
 
 const opskriftAPI = document.querySelector(".opskriftAPI");
 
-
+//askynkron funktion der henter vores token ("adgangskode"), altså den henter login info fra vores wordpress API.
 async function getToken(){
     const userInfo = {
         username:"API user",
@@ -34,6 +34,7 @@ async function getToken(){
     }
 }
 
+//vi tilføjer en addEventListener uden om hele vores funktion, for at være sikker på vi har hentet data inden vi indsætter det i DOM. 
 document.addEventListener("DOMContentLoaded", () =>{
 
     async function init() {
@@ -43,12 +44,16 @@ document.addEventListener("DOMContentLoaded", () =>{
             const params = new URLSearchParams(window.location.search);
             // const searchParams = new URLSearchParams(paramsString);
             // console.log('searchParams:', searchParams)
+            //vi henter slug fra url på den opskrift som vi gerne vil hente
             const theSlug = params.get("slug");
             console.log('theSlug:', theSlug)
+            //vi gemme currentRecipe i , vent på at køre funktionen getRecipebyslug, der henter vores data og vores token 
             const currentRecipe = await getRecipeBySlug(token, theSlug);
             console.log('currentRecipe:', currentRecipe)
+            //vi kalder funktionen der skal indsætte vores data i DOM ved class = "opskriftsAPI"
             renderSingleRecipes(currentRecipe, ".opskriftAPI");
         } catch (err) {
+            //logger i console at der sket en fejl, samt indsætter teksten i DOM ved class = opskriftAPI
             console.log('err:', err);
             opskriftAPI.innerHTML = `Der er sket endnu en fejl!"`
             
@@ -56,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
     
     
-    //henter opskrift med slug
+    //henter opskrift med slug og med token
     async function getRecipeBySlug(token, theSlug) {
         const options = {
             headers:{
@@ -122,5 +127,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         `;
         
     }
+    //vi kalder funktionen der henter vores data og kører vores funktioner
     init();
 })

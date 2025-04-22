@@ -4,10 +4,10 @@ const getRealImageUrls = "&acf_format=standard";
 const authEndpoint ="/wp-json/jwt-auth/v1/token"; //er kopieret fra JWT info på wordpress.
 
 init()
-
+ //gemmer alle opskrifter i en varibel, som et array.
 let AllRecipes = [];
 
-//overorndet funktion. Starte alle vores applikationer op. 
+//overorndet funktion. Starte alle vores applikation op. 
 async function init(){
     try {
 
@@ -22,7 +22,7 @@ async function init(){
 }
 
 //token funktionen. Sende en POST request. log ind info fra wordpress.
-//opretter en ny bruger på wp og laver dem til redaktør. Altså en der ikke kan logge ind på vores wp, men kun se via api. (brug ikke din admin kode).
+//opretter en ny bruger på wp og laver dem til redaktør (dette gør vi inde i wordpress). Altså en der ikke kan logge ind på vores wp, men kun se via api. Vi indsætter nu den kode vi får samt brugernavnet vi har valgt. På denne måde kan vi logge ind via denne bruge og få adgang.
 async function getToken(){
     const userInfo = {
         username:"API user",
@@ -39,8 +39,10 @@ async function getToken(){
     try{
 
         const res = await fetch(domain + authEndpoint, options);
+        // vi gemme vores data i variabel autoResponse og får det i JSON
         const autoResponse = await res.json();
         console.log('autoResponse:', autoResponse)
+        //Vi beder den om at returnere vores data og vores token
         return autoResponse.token;
     } catch(err){
         console.log('err:', err)
@@ -65,48 +67,52 @@ async function getPrivateRecipes(token){
     }
     const res = await fetch(domain + postsEndpoint + "?status=private&per_page=100" + getRealImageUrls, options);
     console.log('res:', res)
-    const recipes = await res.json(); //recepies her gemmer vi data vi hentet.
+    const recipes = await res.json(); //recepies her gemmer vi data vi hentet i variablen recipes.
     return recipes;
 }
+
+//OBS!!!!!!!!!!!!!!!!!!!
+//Vi bruger da ikke denne funktion nogen steder gør vi????????????????
+// Vi kan slette denne når vi indsat alt det med key.trim() i opskrift.js
 //hvis det er sandt at det er et array af opksrifter, looper den igennem det.
 // DOM hooks
-const resultEl = document.querySelector(".result");
-if(resultEl)
-function renderRecipes(data) {
-resultEl.innerHTML = ''; //sørger for at ved ny søgning slettes "indhold" i DOM
+// const resultEl = document.querySelector(".result");
+// if(resultEl)
+// function renderRecipes(data) {
+// resultEl.innerHTML = ''; //sørger for at ved ny søgning slettes "indhold" i DOM. ellers bliver der bare ved med at blive tilføjet opskrifter igen og igen efter hver filtering.
 
-    if (Array.isArray(data)) {
-        data.forEach(recipe => {
-            console.log('recipe:', recipe)
-            const steps = recipe.acf.fremgangsmade;
-            const stepsList = `<ol>${
-                Object.values(steps)
-                    .filter(([key, step]) => key && key.trim() !== "" && step)
-                    .map(step => `<li>${step}</li>`)
-                    .join('')
-            }</ol>`;
+//     if (Array.isArray(data)) {
+//         data.forEach(recipe => {
+//             console.log('recipe:', recipe)
+//             const steps = recipe.acf.fremgangsmade;
+//             const stepsList = `<ol>${
+//                 Object.values(steps)
+//                     .filter(([key, step]) => key && key.trim() !== "" && step)
+//                     .map(step => `<li>${step}</li>`)
+//                     .join('')
+//             }</ol>`;
 
-            const ingredients = recipe.acf.ingredienser;
-            const ingredientsList = `<ul>${ Object.values(ingredients).filter(([key, ingredient]) => key && key.trim() !== "" && ingredient).map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>`;
+//             const ingredients = recipe.acf.ingredienser;
+//             const ingredientsList = `<ul>${ Object.values(ingredients).filter(([key, ingredient]) => key && key.trim() !== "" && ingredient).map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>`;
 
 
-            resultEl.innerHTML += `
-            <article>
-            <img src="${recipe.acf.billede.url}" alt="Et billede af en Gateau Marcel">
-                <h2>${recipe.acf.titel}</h2>
-                <span>Varighed: ${recipe.acf.total_tid.name}</span>
-                ${stepsList}${ingredientsList}
-            </article>
-            `;
-        })
-    } else {
-        resultEl.innerHTML += `
-            <article>
-                <h2>${data.title.rendered}</h2>
-                ${data.content.rendered}
-            </article>`
-    }
-}
+//             resultEl.innerHTML += `
+//             <article>
+//             <img src="${recipe.acf.billede.url}" alt="Et billede af en Gateau Marcel">
+//                 <h2>${recipe.acf.titel}</h2>
+//                 <span>Varighed: ${recipe.acf.total_tid.name}</span>
+//                 ${stepsList}${ingredientsList}
+//             </article>
+//             `;
+//         })
+//     } else {
+//         resultEl.innerHTML += `
+//             <article>
+//                 <h2>${data.title.rendered}</h2>
+//                 ${data.content.rendered}
+//             </article>`
+//     }
+// }
 
 
 //FILTER
