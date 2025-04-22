@@ -3,19 +3,6 @@ const postsEndpoint = "wp-json/wp/v2/posts";
 const getRealImageUrls = "&acf_format=standard";
 const authEndpoint ="/wp-json/jwt-auth/v1/token"; //er kopieret fra JWT info på wordpress.
 
-// relevante id'er
-const glutenId = "5"
-const vegetarianId = "6"
-const ketoId = "7"
-
-const beginnerId = "11"
-const intId = "12"
-const expId = "13"
-
-const shortTimeId = "14"
-const medTimeId = "15"
-const longTimeId = "16"
-const longTimePlusId = "17"
 init()
 
 let AllRecipes = [];
@@ -34,8 +21,8 @@ async function init(){
     }
 }
 
-//token funktionen. Sende en POST request. logind info fra wordpress.
-//opretter en ny bruger på wp og laver dem til redaktør. Altså en der ikke kan logge ind på vores wp, men kun se via api. brug ikke din admin koden.
+//token funktionen. Sende en POST request. log ind info fra wordpress.
+//opretter en ny bruger på wp og laver dem til redaktør. Altså en der ikke kan logge ind på vores wp, men kun se via api. (brug ikke din admin kode).
 async function getToken(){
     const userInfo = {
         username:"API user",
@@ -81,7 +68,7 @@ async function getPrivateRecipes(token){
     const recipes = await res.json(); //recepies her gemmer vi data vi hentet.
     return recipes;
 }
-//hvis det er sandt at det er et arry af opksrifter, looper den igennem det.
+//hvis det er sandt at det er et array af opksrifter, looper den igennem det.
 // DOM hooks
 const resultEl = document.querySelector(".result");
 if(resultEl)
