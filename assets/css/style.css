@@ -60,6 +60,7 @@ header{
     justify-content: space-between;
     background-color: var(--NavbarFarve);
     padding: 1rem;
+    border-bottom: solid var(--Overskrift);
 }
 
 nav {
@@ -304,7 +305,9 @@ nav {
 }
 
 /*styling af img slider*/
-
+.billedISlider{
+    height: 250px;
+}
 /*Styling af forside slut*/
 /**/
 
@@ -314,7 +317,7 @@ nav {
 
 .opskriftLayout{
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
 }
 
@@ -350,7 +353,8 @@ nav {
 }
 
 .opskriftLayout img{
-    height: 30rem;
+    /* height: 30rem; */
+ /*billedet ødelægger layoutet... ved ikke hvordan jeg fixer dette!*/
     
 }
 
@@ -359,6 +363,19 @@ nav {
     margin-bottom: 1rem;
     margin-left: 1rem;
 }
+.iconerOpskrift{
+    display: flex;
+    gap: 1rem;
+    /* padding-left: 5rem; */
+    justify-content: center;
+    align-items: center;
+}
+
+.introTilOpskrift h1, .pIntro{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 
 /*Styling af siden oversigt*/
 .cardsSektion{
