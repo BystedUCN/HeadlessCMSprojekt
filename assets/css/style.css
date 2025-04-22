@@ -305,8 +305,49 @@ nav {
 }
 
 /*styling af img slider*/
-.billedISlider{
+.billedeISlider{
     height: 250px;
+}
+
+.hurtigAftensMadSlider, .gaesteMadSlider, .weekendMadSlider {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.hurtigMadContainer, .gaesteMadContainer, .weekendMadContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.hurtigMadContainer img, .gaesteMadContainer img, .weekendMadContainer img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 3px;
+}
+
+.sliderItem {
+    position: relative;
+    display: inline-block;
+}
+
+.recipeTitle {
+    position: absolute;
+    bottom: 0.4rem;
+    left: 0;
+    right: 0;
+    background:  rgba(0,0,0,0.3);
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#sliders {
+    max-width: 1300px;
+    margin: 0 auto;
 }
 /*Styling af forside slut*/
 /**/
